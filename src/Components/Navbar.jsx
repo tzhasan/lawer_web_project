@@ -22,6 +22,9 @@ import {
   LifebuoyIcon,
   PowerIcon,
   Bars2Icon,
+  HomeIcon,
+  
+  
 } from "@heroicons/react/24/outline";
 
 // profile menu component
@@ -47,6 +50,7 @@ const profileMenuItems = [
     icon: PowerIcon,
   },
 ];
+
 
 function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -115,7 +119,7 @@ function ProfileMenu() {
 const navListItems = [
   {
     label: "Home",
-    icon: UserCircleIcon,
+    icon: HomeIcon,
     path: "/",
   },
   {
