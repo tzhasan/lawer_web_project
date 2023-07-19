@@ -1,3 +1,6 @@
+
+import AppointmentCard from "@/Components/AppointmentCard";
+import LawyerCard from "@/Components/LawyerCard";
 import Banner from "@/Components/Banner";
 
 export const metadata = {
@@ -8,9 +11,11 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
-      <section className="my-5">
+     <section className="my-5">
         <Banner />
       </section>
+      <LawyerCard/>
+      <AppointmentCard/>
       <div>hello</div>
     </div>
   );

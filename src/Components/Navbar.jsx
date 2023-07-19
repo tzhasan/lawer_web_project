@@ -2,7 +2,6 @@
 import React from "react";
 import {
   Navbar,
-  MobileNav,
   Typography,
   Button,
   Menu,
@@ -11,6 +10,7 @@ import {
   MenuItem,
   Avatar,
   IconButton,
+  Collapse,
 } from "@material-tailwind/react";
 import {
   CubeTransparentIcon,
@@ -23,9 +23,11 @@ import {
   PowerIcon,
   Bars2Icon,
   HomeIcon,
-  
-  
+
 } from "@heroicons/react/24/outline";
+import Logo, { projectName } from "@/app/utils/config";
+
+import Image from "next/image";
 
 // profile menu component
 const profileMenuItems = [
@@ -70,13 +72,12 @@ function ProfileMenu() {
             alt="user Image"
             className="border border-primary p-0.5 "
             src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-            
+
           />
           <ChevronDownIcon
             strokeWidth={2.5}
-            className={`h-3 w-3 transition-transform ${
-              isMenuOpen ? "rotate-180" : ""
-            }`}
+            className={`h-3 w-3 transition-transform ${isMenuOpen ? "rotate-180" : ""
+              }`}
           />
         </Button>
       </MenuHandler>
@@ -87,11 +88,10 @@ function ProfileMenu() {
             <MenuItem
               key={label}
               onClick={closeMenu}
-              className={`flex items-center gap-2 rounded ${
-                isLastItem
+              className={`flex items-center gap-2 rounded ${isLastItem
                   ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
                   : ""
-              }`}
+                }`}
             >
               {React.createElement(icon, {
                 className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
@@ -176,12 +176,22 @@ export default function ComplexNavbar() {
   return (
     <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
       <div className="relative mx-auto flex items-center text-blue-gray-900">
+        <div className="h-full w-32">
+          <Image
+            style={{
+              width: 32
+            }}
+            src={Logo}
+            alt="nature image"
+          />
+        </div>
+
         <Typography
           as="a"
           href="#"
           className="mr-4 ml-2 cursor-pointer py-1.5 font-bold"
         >
-          Lawer Project
+          {projectName}
         </Typography>
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <NavList />
@@ -197,9 +207,9 @@ export default function ComplexNavbar() {
         </IconButton>
         <ProfileMenu />
       </div>
-      <MobileNav open={isNavOpen} className="overflow-scroll">
+      <Collapse open={isNavOpen} className="overflow-scroll">
         <NavList />
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 }
