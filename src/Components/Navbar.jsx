@@ -25,8 +25,8 @@ import {
   HomeIcon,
 
 } from "@heroicons/react/24/outline";
-import { projectName } from "@/app/utils/config";
-import Logo from "./../../public/logo.png"
+import Logo, { projectName } from "@/app/utils/config";
+
 import Image from "next/image";
 
 // profile menu component
