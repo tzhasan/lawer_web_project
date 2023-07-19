@@ -3,8 +3,8 @@ import React from "react";
 import { currency } from "@/app/utils/config";
 export default function LawyerCard() {
   return (
-    <div className="grid grid-cols-5 md:grid-cols-4 max-w-xl border bg-darkgray rounded-xl py-5 shadow-lg">
-      <div className="col-span-3 md:col-span-2 pl-5 border ">
+    <div className="grid grid-cols-5 md:grid-cols-4 max-w-xl  bg-darkgray rounded-xl py-5 shadow-lg">
+      <div className="col-span-3 md:col-span-2 pl-5  ">
         <div>
           <h3 className="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-2">
             Natalie Paisley
@@ -31,7 +31,7 @@ export default function LawyerCard() {
           </div>
         </div>
       </div>
-      <div className="col-span-2 flex self-center border">
+      <div className="col-span-2 flex self-center ">
         <img
           className="rounded-s-full w-96 h-48 rounded-br-lg"
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
