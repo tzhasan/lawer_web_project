@@ -16,9 +16,10 @@ export default function Home() {
         <Banner />
       </section>
       <LawyerCard/>
+      <div className="p-10">hello</div>
       <AppointmentCard />
-      <PrimaryButton link="/contact">Click</PrimaryButton>
-      <div>hello</div>
+      <div className="p-10">hello</div>
+      {/* <PrimaryButton link="/contact">Click</PrimaryButton> */}
     </div>
   );
 }

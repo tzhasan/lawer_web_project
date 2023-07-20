@@ -13,9 +13,7 @@ import {
   Collapse,
 } from "@material-tailwind/react";
 import {
-  CubeTransparentIcon,
   UserCircleIcon,
-  CodeBracketSquareIcon,
   ChevronDownIcon,
   Cog6ToothIcon,
   InboxArrowDownIcon,
@@ -23,7 +21,8 @@ import {
   PowerIcon,
   Bars2Icon,
   HomeIcon,
-
+  EnvelopeIcon,
+  CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
 import Logo, { projectName } from "@/app/utils/config";
 
@@ -123,19 +122,14 @@ const navListItems = [
     path: "/",
   },
   {
-    label: "Services",
-    icon: UserCircleIcon,
-    path: "/services",
+    label: "Message",
+    icon: EnvelopeIcon,
+    path: "/message",
   },
   {
-    label: "Contact",
-    icon: CubeTransparentIcon,
-    path: "/contact",
-  },
-  {
-    label: "About us",
-    icon: CodeBracketSquareIcon,
-    path: "/about-us",
+    label: "Appointments",
+    icon: CalendarDaysIcon,
+    path: "/appointment",
   },
 ];
 
