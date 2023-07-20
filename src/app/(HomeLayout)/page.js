@@ -1,7 +1,8 @@
-
 import AppointmentCard from "@/Components/AppointmentCard";
 import LawyerCard from "@/Components/LawyerCard";
 import Banner from "@/Components/Banner";
+import PrimaryButton from "@/Components/PrimaryButton";
+
 
 export const metadata = {
   title: "Home | Lawyer",
@@ -15,8 +16,10 @@ export default function Home() {
         <Banner />
       </section>
       <LawyerCard/>
-      <AppointmentCard/>
-      <div>hello</div>
+      <div className="p-10">hello</div>
+      <AppointmentCard />
+      <div className="p-10">hello</div>
+      {/* <PrimaryButton link="/contact">Click</PrimaryButton> */}
     </div>
   );
 }

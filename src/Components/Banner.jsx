@@ -9,6 +9,9 @@ import { Carousel } from "@material-tailwind/react";
 export default function Banner() {
   return (
     <Carousel
+      autoplay
+      autoplaySpeed={4000}
+      infinite
       className="rounded-xl md:h-[70vh]"
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
