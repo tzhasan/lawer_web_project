@@ -27,28 +27,29 @@ import {
 import Logo, { projectName } from "@/app/utils/config";
 
 import Image from "next/image";
+import Link from "next/link";
 
 // profile menu component
 const profileMenuItems = [
   {
     label: "My Profile",
     icon: UserCircleIcon,
+    path: "",
   },
   {
     label: "Edit Profile",
     icon: Cog6ToothIcon,
+    path: "",
   },
   {
     label: "Inbox",
     icon: InboxArrowDownIcon,
+    path: "",
   },
   {
-    label: "Help",
-    icon: LifebuoyIcon,
-  },
-  {
-    label: "Sign Out",
+    label: "Sign Up",
     icon: PowerIcon,
+    path: "/register",
   },
 ];
 
@@ -81,30 +82,34 @@ function ProfileMenu() {
         </Button>
       </MenuHandler>
       <MenuList className="p-1">
-        {profileMenuItems.map(({ label, icon }, key) => {
+        {profileMenuItems.map(({ label, icon, path }, key) => {
           const isLastItem = key === profileMenuItems.length - 1;
           return (
-            <MenuItem
+            <Link
+              href={path}
               key={label}
               onClick={closeMenu}
-              className={`flex items-center gap-2 rounded ${isLastItem
+              className={`flex items-center gap-2 rounded ${
+                isLastItem
                   ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
                   : ""
-                }`}
+              }`}
             >
-              {React.createElement(icon, {
-                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
-                strokeWidth: 2,
-              })}
-              <Typography
-                as="span"
-                variant="small"
-                className="font-normal"
-                color={isLastItem ? "red" : "inherit"}
-              >
-                {label}
-              </Typography>
-            </MenuItem>
+              <MenuItem className="flex items-center gap-1">
+                {React.createElement(icon, {
+                  className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                  strokeWidth: 2,
+                })}
+                <Typography
+                  as="span"
+                  variant="small"
+                  className="font-normal"
+                  color={isLastItem ? "red" : "inherit"}
+                >
+                  {label}
+                </Typography>
+              </MenuItem>
+            </Link>
           );
         })}
       </MenuList>
@@ -182,7 +187,7 @@ export default function ComplexNavbar() {
 
         <Typography
           as="a"
-          href="#"
+          href="/"
           className="mr-4 ml-2 cursor-pointer py-1.5 font-bold"
         >
           {projectName}
